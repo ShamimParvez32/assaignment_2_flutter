@@ -22,6 +22,10 @@ class MyApp extends StatelessWidget {
 class HomeActivity extends StatelessWidget {
   const HomeActivity({super.key});
 
+  ShowSnakeBar(message, context){
+  return ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(message)));
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -30,9 +34,9 @@ class HomeActivity extends StatelessWidget {
         title: Text('MyProfile'),
         toolbarHeight: 50,
         actions: [
-          IconButton(onPressed: () {}, icon: Icon(Icons.add)),
-          IconButton(onPressed: () {}, icon: Icon(Icons.settings)),
-          IconButton(onPressed: () {}, icon: Icon(Icons.phone)),
+          IconButton(onPressed: () {ShowSnakeBar('I am add', context);}, icon: Icon(Icons.add)),
+          IconButton(onPressed: () {ShowSnakeBar('I am settings', context);}, icon: Icon(Icons.settings)),
+          IconButton(onPressed: () {ShowSnakeBar('I am phone', context);}, icon: Icon(Icons.phone)),
         ],
       ),
 
